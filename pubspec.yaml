@@ -1,6 +1,6 @@
 name: smart_utils
 description: 一个简单的webview基本壳子的工具库.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/lonelyWalkor/flutter_smart_utils
 
 environment:

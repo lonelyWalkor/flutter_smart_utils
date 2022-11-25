@@ -1,3 +1,7 @@
+## 1.0.3
+
+* add git registry
+
 ## 1.0.2
 * scan qrcode add flash toogle
 
