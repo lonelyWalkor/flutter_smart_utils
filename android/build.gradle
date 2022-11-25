@@ -1,0 +1,72 @@
+group 'com.smart.utils.smart_utils'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://developer.huawei.com/repo/' }
+        maven { url 'https://developer.hihonor.com/repo/' }
+    }
+
+    dependencies {
+
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://developer.huawei.com/repo/' }
+        maven { url 'https://developer.hihonor.com/repo/' }
+        flatDir {
+            dirs project(':smart_utils').file('libs')
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion 33
+
+
+
+    dependencies {
+        implementation 'com.amap.api:location:5.2.0'
+
+        // oppo 通道
+        implementation 'cn.jiguang.sdk.plugin:oppo:4.8.4'
+        // JPush Android SDK v4.6.0 开始，需要单独引入 oppo 厂商 aar ，请下载官网 SDK 包并把 jpush-android-xxx-release/third-push/oppo/libs 下的 aar 文件单独拷贝一份到应用 module/libs 下
+        // implementation(name: 'com.heytap.msp-push-3.1.0', ext: 'aar')
+        implementation(name: 'com.heytap.msp_3.1.0', ext: 'aar')
+        //以下为 OPPO 3.1.0 aar需要依赖
+        implementation 'com.google.code.gson:gson:2.6.2'
+        implementation 'commons-codec:commons-codec:1.6'
+        implementation 'androidx.annotation:annotation:1.1.0'
+
+        //小米
+        implementation 'cn.jiguang.sdk.plugin:xiaomi:4.8.4'
+
+        // 荣耀
+        implementation 'cn.jiguang.sdk.plugin:honor:4.8.4'
+        implementation 'com.hihonor.mcs:push:7.0.1.103'
+        //  implementation(name: 'HonorPushSDK-release-7.0.1.103', ext: 'aar')
+        //  注2：JPush Android SDK 4.8.1 升级荣耀 SDK 版本，对应版本为：HiPushSdk-6.0.4.200.aar、HiPushSdkCommon-6.0.4.200.aar。
+        //  注3：极光集成荣耀通道在 JPush Android SDK 4.8.3 添加，对应测试的荣耀 SDK 版本为：HiPushSdk-v7.0.1.103.aar(注意荣耀 SDK 只保留：HiPushSdk，原来的 HiPushSdkCommon 需要删掉)。
+
+        // vivo
+        implementation 'cn.jiguang.sdk.plugin:vivo:4.8.4'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+}

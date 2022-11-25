@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.smart.utils.smart_utils">
+<!--    <application>-->
+<!--    </application>-->
+<!--    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>-->
+</manifest>
